@@ -22,11 +22,10 @@ st.markdown('''
 ## User Inputs
 date = st.date_input("Date of trip")
 time = st.time_input("Time of trip")
-pickup_longitude = st.text_input("Pickup Longitude", 40.7614327)
-pickup_latitude = st.text_input("Pickup Latitude", -73.9798156)
-dropoff_longitude = pickup_latitude = st.text_input("Dropoff Longitude",
-                                                    40.6331166)
-dropoff_latitude = st.text_input("Dropoff Latitude", -73.8874078)
+pickup_longitude = st.number_input("Pickup Longitude", -73.9798156)
+pickup_latitude = st.number_input("Pickup Latitude", 40.7614327)
+dropoff_longitude =  st.number_input("Dropoff Longitude", -73.8874078)
+dropoff_latitude = st.number_input("Dropoff Latitude", 40.6331166)
 passenger_count = st.slider('How many passengers?', 1, 6, 2)
 
 # Calculations
@@ -73,10 +72,11 @@ if prediction:
 else:
     st.markdown("### Could not generate a prediction")
 
-'''
-## Testing area
-'''
-st.write(response.json().get("prediction"))
+# '''
+# ## Testing area
+# '''
+# st.write(params)
+# st.write(str(pickup_datetime))
 
 
 # 3. Let's call our API using the `requests` package...
